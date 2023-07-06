@@ -66,7 +66,6 @@ class Car extends Transport {
         return this.doors;
     }
 }
-
 class Bike extends Transport {
     constructor(type, price, brand, image, maxSpeed) {
         super(type, price, brand, image);
@@ -88,26 +87,21 @@ const carsSection = document.querySelector(".cars");
 
 function createCarSection(car) {
     let carDiv = document.createElement('li');
-    carDiv.classList.add('car');
     carsSection.append(carDiv);
 
     let carTitle = document.createElement('h3');
-    carTitle.classList.add('car__title');
     carTitle.textContent = car.getInfo().brand;
     carDiv.append(carTitle);
 
     const carImage = document.createElement('img');
-    carImage.classList.add('car__image');
     carImage.setAttribute('src', car.getImg());
     carDiv.append(carImage);
 
     const carDoors = document.createElement('p');
-    carDoors.classList.add('car__doors');
     carDoors.innerText = `Количество дверей: ${car.getDoorsCount()}`;
     carDiv.append(carDoors);
 
     const carPrice = document.createElement('p');
-    carPrice.classList.add('car__price');
     carPrice.textContent = `Цена: ${car.getPrice()} руб.`;
     carDiv.appendChild(carPrice);
 }
@@ -124,26 +118,21 @@ const bikesSection = document.querySelector(".bikes");
 
 function createBikeSection(bike) {
     let bikeDiv = document.createElement('li');
-    bikeDiv.classList.add('bike');
     bikesSection.append(bikeDiv);
 
     let bikeTitle = document.createElement('h3');
-    bikeTitle.classList.add('bike__title');
     bikeTitle.textContent = bike.getInfo().brand;
     bikeDiv.append(bikeTitle);
 
     const bikeImage = document.createElement('img');
-    bikeImage.classList.add('bike__image');
     bikeImage.setAttribute('src', bike.getImg());
     bikeDiv.append(bikeImage);
 
     const bikeSpeed = document.createElement('p');
-    bikeSpeed.classList.add('bike__speed');
     bikeSpeed.innerText = `Максимальная скорость: ${bike.getMaxSpeed()}`;
     bikeDiv.append(bikeSpeed);
 
     const bikePrice = document.createElement('p');
-    bikePrice.classList.add('bike__price');
     bikePrice.textContent = `Цена: ${bike.getPrice()} руб.`;
     bikeDiv.append(bikePrice);
 }
