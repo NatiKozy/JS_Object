@@ -201,12 +201,6 @@ animal2.makeSound();
 
 //Задание 18
 //Создайте класс Point. Класс должен содержать свойства x и y. Создайте на его основе объект point и выведите его свойства в консоль.
-
-//Ваш код
-
-//Задание 19
-//В классе Point добавлен метод getDistance, который будет возвращать расстояние от точки до начала координат (0,0). Создайте объект point2 на основе класса Point и выведите его расстояние до начала координат с помощью метода getDistance.
-
 class Point {
 	constructor(x, y) {
 		this.x = x;
@@ -217,63 +211,160 @@ class Point {
 		return Math.sqrt(this.x ** 2 + this.y ** 2);
 	}
 }
+const point1 = new Point(30, 30);
+console.log('18', point1);
 
-//Ваш код
+//Задание 19
+//В классе Point добавлен метод getDistance, который будет возвращать расстояние от точки до начала координат (0,0). Создайте объект point2 на основе класса Point и выведите его расстояние до начала координат с помощью метода getDistance.
+
+const point2 = new Point(50, 50);
+console.log('19', point2.getDistance());
 
 //Задание 20
 //Создайте класс Calculator. Класс должен содержать методы add, subtract, multiply и divide, которые будут выполнять соответствующие математические операции над двумя числами и возвращать результат. Создайте объект calculator на основе класса Calculator, вызовите каждый из методов и выведите результаты в консоль.
 
-//Ваш код
+class Calculator {
+	constructor(a, b) {
+	this.a = a;
+	this.b = b;
+	}
+
+	add() {
+		return this.a + this.b;
+	}
+
+	subtract() {
+		return this.a - this.b;
+	}
+
+	multiply() {
+		return this.a * this.b;
+	}
+
+	divide() {
+		return this.a / this.b;
+	}
+}
+const calculator = new Calculator(35, 7);
+console.log('20', calculator.add());
+console.log('20', calculator.subtract());
+console.log('20', calculator.multiply());
+console.log('20', calculator.divide());
 
 //Задание 21
 //Создайте класс Person. Класс должен содержать свойства name, age и city. Создайте на его основе объект person и выведите его свойства в консоль.
 
-//Ваш код
+class Person {
+	constructor(name, age, city) {
+		this.name = name;
+		this.age = age;
+		this.city = city;
+	}
+	changeCity() {
+		return
+	}
+}
+
+const person1 = new Person('Вика', 35, 'Санкт-Петербург');
+console.log('21', person1);
 
 //Задание 22
 //Добавьте в класс Person метод changeCity, который будет изменять значение свойства city на новое значение. Создайте объект person2 на основе класса Person, вызовите метод changeCity с аргументом "New York" и выведите новое значение свойства city в консоль.
 
-//Ваш код
+const person2 = new Person('Алена', 43, 'Москва');
 
 //Задание 23
 //Создайте класс Employee. Класс должен содержать свойства name, position и salary. Создайте на его основе объект employee и выведите его свойства в консоль.
 //Подсказка: Используйте методы класса, чтобы создать объект employee и вывести его свойства.
 
-//Ваш код
+class Employee {
+	constructor(name, position, salary) {
+		this.name = name;
+		this.position = position;
+		this.salary = salary;
+	}
+	calculateBonus(bonus) {
+		this.bonus = this.salary * bonus / 100;;
+		return this.salary + this.bonus;
+
+	}
+}
+const employee1 = new Employee('Никита', 'старший менеджер', 75000);
+console.log('23', employee1);
 
 //Задание 24
 //Добавьте в класс Employee метод calculateBonus, который будет принимать процент бонуса и увеличивать зарплату сотрудника на соответствующую сумму. Создайте объект employee2 на основе класса Employee и вызовите метод calculateBonus с процентом 10. Выведите новую зарплату сотрудника в консоль.
 //Подсказка: Используйте метод call или apply, чтобы вызвать метод calculateBonus для объекта employee2 и передать процент бонуса.
 
-//Ваш код
+const employee2 = new Employee('Елена', 'менеджер', 45000);
+console.log('24',employee2);
+console.log('24',employee2.calculateBonus(10));
 
 //Задание 25
 //Создайте класс Product. Класс должен содержать свойства name, price и quantity. Создайте на его основе объект product и выведите его свойства в консоль.
 //Подсказка: Используйте методы класса, чтобы создать объект product и вывести его свойства.
 
-//Ваш код
+class Product {
+	constructor(name, price, quantity){
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+	calculateTotalPrice(){
+		return this.price * this.quantity;
+	}
+}
+const product1 = new Product('куртка', 7999, 3);
+console.log('25', product1);
 
 //Задание 26
 //Добавьте в класс Product метод calculateTotalPrice, который будет возвращать общую стоимость продукта (произведение цены на количество). Создайте объект product2 на основе класса Product с ценой 10 и количеством 5. Выведите общую стоимость продукта в консоль с помощью метода calculateTotalPrice.
 
-//Ваш код
+const product2 = new Product('юбка', 10, 5);
+console.log('26', product2.calculateTotalPrice());
 
 //Задание 27
 //Создайте класс Triangle. Класс должен содержать свойства side1, side2 и side3, которые представляют длины сторон треугольника. Создайте на его основе объект triangle и выведите его свойства в консоль.
 
-//Ваш код
+class Triangle {
+	constructor(side1, side2, side3) {
+		this.side1 = side1;
+		this.side2 = side2;
+		this.side3 = side3;
+	}
+	calculatePerimeter() {
+		const perimeter = this.side1 + this.side2 + this.side3;
+		return perimeter;
+	}
+}
+
+const triangle1 = new Triangle(10, 10, 20);
+console.log('27', triangle1);
 
 //Задание 28
 //Добавьте в класс Triangle метод calculatePerimeter, который будет возвращать периметр треугольника (сумма длин всех сторон). Создайте объект triangle2 на основе класса Triangle со сторонами 3, 4 и 5. Выведите периметр треугольника в консоль с помощью метода calculatePerimeter.
 
-//Ваш код
+const triangle2 = new Triangle(3, 4, 5);
+console.log('28', triangle2.calculatePerimeter());
 
 //Задание 29
 //Создайте класс Square. Класс должен содержать свойство side, представляющее длину стороны квадрата. Создайте на его основе объект square и выведите его свойство в консоль.
 
-//Ваш код
+class Square {
+	constructor(side) {
+		this.side = side;
+	}
+	calculateArea() {
+		const area = this.side * this.side;
+		return area;
+	}
+}
+const square1 = new Square(7);
+console.log('29', square1);
 
 //Задание 30
 //Добавьте в класс Square метод calculateArea, который будет вычислять и возвращать площадь квадрата (произведение длины стороны на саму себя). Создайте объект square2 на основе класса Square со стороной 5 и выведите его площадь квадрата в консоль с помощью метода calculateArea.
 
-//Ваш код
+const square2 = new Square(5);
+console.log('30', square2.calculateArea());
