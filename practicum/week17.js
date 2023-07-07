@@ -1,63 +1,111 @@
 // Задание 1
 // Создайте класс Worker. Класс должен содержать свойства name, surname. Создайте на его основе объект worker. Выведите в консоль созданный объект.
 // Подсказка: имена классов пишем с большой буквы
-
-//Ваш код
+class Worker {
+	constructor(name, surname) {
+		this.name = name;
+		this.surname = surname;
+	}
+	fullName(){
+		return `${this.surname}, ${this.name}`
+	}
+}
 
 //Создаём объекта на основе класса Worker
-const worker = new Worker('Имя', 'Фамилия');
+const worker = new Worker('Петя', 'Иванов');
 //Выводим созданный объект в консоль
-console.log(worker);
+console.log('1', worker);
 
 //Задание 2
 //Добавьте в класс Worker метод fullName, который будет возвращать полное имя работника в формате "Фамилия, Имя". Создайте объект worker2 на основе класса Worker и выведите его полное имя в консоль с помощью метода fullName
 
-//Ваш код
-
 //Создаём объект worker2 на основе класса Worker
-const worker2 = new Worker('Имя', 'Фамилия');
+const worker2 = new Worker('Вася', 'Пупкин');
 //Выводим полное имя объекта worker2 в консоль с помощью метода fullName
-console.log(worker2.fullName());
+console.log('2', worker2.fullName());
 
 //Задание 3
 //Создайте класс Car. Класс должен содержать свойства brand, model и year. Создайте на его основе объект car и выведите его свойства в консоль.
 
-//Ваш код
+class Car {
+	constructor(brand, model,year) {
+		this.brand = brand;
+		this.model = model;
+		this.year = year
+	}
+	getAge() {
+		const year = new Date().getFullYear();
+		const result = year - this.year;
+		return result;
+	}
+}
+
+const car1 = new Car('Skoda', 'Rapid', 2014);
+console.log('3', car1);
 
 //Задание 4
 //Добавьте в класс Car метод getAge, который будет возвращать возраст машины (текущий год минус год выпуска). Создайте объект car2 на основе класса Car и выведите его возраст в консоль с помощью метода getAge.
 
-//Ваш код
-
 //Создаём объект car2 на основе класса Car
-const car2 = new Car('Brand', 'Model', 2010);
+const car2 = new Car('Skoda', 'Octavia', 2010);
 //Выводим возраст объекта car2 в консоль с помощью метода getAge
-console.log(car2.getAge());
+console.log('4', car2.getAge());
 
 //Задание 5
 //Создайте класс Rectangle. Класс должен содержать свойства width и height. Создайте на его основе объект rectangle и выведите его свойства в консоль.
+class Rectangle {
+	constructor(width, height) {
+		this.width = width;
+		this.height = height;
+	}
+	getArea() {
+		const area = this.width * this.height
+		return area;
+	}
+}
 
-//Ваш код
+const rectangle1 = new Rectangle(20, 50);
+console.log('5', rectangle1);
 
 //Задание 6
 //Добавьте в класс Rectangle метод getArea, который будет возвращать площадь прямоугольника (произведение ширины и высоты). Создайте объект rectangle2 на основе класса Rectangle и выведите его площадь в консоль с помощью метода getArea.
 
-//Ваш код
+const rectangle2 = new Rectangle(60, 30);
+console.log('6', rectangle2.getArea());
 
 //Задание 7
 //Создайте класс Circle. Класс должен содержать свойство radius. Создайте на его основе объект circle и выведите его свойство в консоль.
 
-//Ваш код
+class Circle {
+	constructor (radius) {
+		this.radius = radius;
+	}
+	calculateArea() {
+		const circleArea = this.radius * this.radius * 3.14;
+		return circleArea;
+	}
+}
+const circle1 = new Circle(5);
+console.log('7', circle1);
 
 //Задание 8
 //Добавьте в класс Circle метод calculateArea, который будет вычислять и возвращать площадь круга. Формула для расчета площади круга: площадь = радиус * радиус * 3.14. Создайте объект circle2 на основе класса Circle с радиусом 3 и выведите его площадь круга в консоль с помощью метода calculateArea.
 
-//Ваш код
+const circle2 = new Circle(3);
+console.log('8', circle2.calculateArea());
 
 //Задание 9
 //Создайте класс Student. Класс должен содержать свойства name, age и grade. Создайте на его основе объект student и выведите его свойства в консоль.
 
-//Ваш код
+class Student {
+	constructor (name, age, grade) {
+		this.name = name;
+		this.age = age;
+		this.grade = grade;	}
+}
+
+const student1 = new Student('Полина', 22, 5);
+console.log(student1);
 
 //Задание 10
 //Добавьте в класс Student метод increaseGrade, который будет увеличивать текущую оценку на 1. Создайте объект student2 на основе класса Student, увеличьте его оценку с помощью метода increaseGrade и выведите новую оценку в консоль.
