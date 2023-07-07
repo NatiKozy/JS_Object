@@ -368,3 +368,18 @@ console.log('29', square1);
 
 const square2 = new Square(5);
 console.log('30', square2.calculateArea());
+
+
+class Superworker {
+	constructor(name, rate, days) {
+	this.name = name;
+	this.rate = rate;
+	this.days = days;
+	}
+	getSalary() {
+		const salary = this.rate * this.days;
+		return salary;
+	}
+}
+const superworker = new Superworker ('Евлампий', 5500, 21);
+console.log('с платформы', superworker.getSalary());
