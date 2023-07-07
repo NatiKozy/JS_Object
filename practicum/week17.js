@@ -101,65 +101,103 @@ class Student {
 	constructor (name, age, grade) {
 		this.name = name;
 		this.age = age;
-		this.grade = grade;	}
+		this.grade = grade;
+	}
+	increaseGrade() {
+		const upGrade = this.grade + 1;
+		return upGrade;
+	}
 }
 
 const student1 = new Student('Полина', 22, 5);
-console.log(student1);
+console.log('9', student1);
 
 //Задание 10
 //Добавьте в класс Student метод increaseGrade, который будет увеличивать текущую оценку на 1. Создайте объект student2 на основе класса Student, увеличьте его оценку с помощью метода increaseGrade и выведите новую оценку в консоль.
 
-//Ваш код
+const student2 = new Student('Карина', 19, 3);
+console.log('10', student2.increaseGrade());
 
 //Задание 11
 //Создайте класс Book. Класс должен содержать свойства title, author и year. Создайте на его основе объект book и выведите его свойства в консоль.
 
-//Ваш код
+class Book {
+	constructor(title, author, year) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+	}
+	getTitleAndAuthor() {
+		return `${this.title} - ${this.author}`;
+	}
+}
+const book1 = new Book("Туарег", "Альберто Васкес-Фигероа", 1980);
+console.log('11', book1);
 
 //Задание 12
 //Добавьте в класс Book метод getTitleAndAuthor, который будет возвращать строку в формате "Название книги - Автор". Создайте объект book2 на основе класса Book и выведите его название и автора в консоль с помощью метода getTitleAndAuthor.
 
-//Ваш код
+const book2 = new Book("Джельсомино в стране лжецов", "Джанни Родари", 1959);
+console.log('12', book2.getTitleAndAuthor());
 
 //Задание 13
 //Создайте класс BankAccount. Класс должен содержать свойства accountNumber и balance. Создайте на его основе объект account и выведите его свойства в консоль.
 
-//Ваш код
-
-//Задание 14
-//Добавьте в класс BankAccount метод deposit, который будет увеличивать баланс на заданную сумму. Создайте объект account2 на основе класса BankAccount, пополните его баланс с помощью метода deposit и выведите новый баланс в консоль.
-
-//Ваш код
-
-//Задание 15
-//В класс BankAccount добавлен метод withdraw, который уменьшает баланс на заданную сумму. Если запрошенная сумма превышает текущий баланс, выведите сообщение "Недостаточно средств". Создайте объект account3 на основе класса BankAccount, попробуйте снять с него сумму, превышающую баланс, и выведите соответствующее сообщение в консоль.
-
 class BankAccount {
-	constructor(balance) {
+	constructor(accountNumber, balance) {
+		this.accountNumber = accountNumber;
 		this.balance = balance;
+	}
+
+	deposit() {
+		return this.balance + 10000;
 	}
 
 	withdraw(amount) {
 		if (amount <= this.balance) {
-			//Уменьшите баланс на заданную сумму
+			const amount = 5000;
+			return this.balance - amount;
 		} else {
-			//Выводите в консоль сообщение
+			return  'Недостаточно средств';
 		}
 	}
 }
+const account1 = new BankAccount(123, 45000);
+console.log('13', account1);
+
+//Задание 14
+//Добавьте в класс BankAccount метод deposit, который будет увеличивать баланс на заданную сумму. Создайте объект account2 на основе класса BankAccount, пополните его баланс с помощью метода deposit и выведите новый баланс в консоль.
+
+const account2 = new BankAccount(124, 20000);
+console.log('14', account2.deposit());
+
+//Задание 15
+//В класс BankAccount добавлен метод withdraw, который уменьшает баланс на заданную сумму. Если запрошенная сумма превышает текущий баланс, выведите сообщение "Недостаточно средств". Создайте объект account3 на основе класса BankAccount, попробуйте снять с него сумму, превышающую баланс, и выведите соответствующее сообщение в консоль.
+
+const account3 = new BankAccount(125, 4000);
+console.log('15', account3.withdraw());
 //Создайте объект account3 на основе класса BankAccount
 //Попытайтесь снять сумму, превышающую баланс
 
 //Задание 16
 //Создайте класс Animal. Класс должен содержать свойства name и sound. Создайте на его основе объект animal и выведите его свойства в консоль.
 
-//Ваш код
-
+class Animal {
+	constructor(name, sound) {
+		this.name = name;
+		this.sound = sound;
+	}
+	makeSound() {
+		console.log('17', this.sound);
+	}
+}
+const animal1 = new Animal('лягушка', 'ква-ква');
+console.log('16', animal1);
 //Задание 17
 //Добавьте в класс Animal метод makeSound, который будет выводить в консоль звук животного. Создайте объект animal2 на основе класса Animal и вызовите метод makeSound.
 
-//Ваш код
+const animal2 = new Animal('комар','ззззз');
+animal2.makeSound();
 
 //Задание 18
 //Создайте класс Point. Класс должен содержать свойства x и y. Создайте на его основе объект point и выведите его свойства в консоль.
