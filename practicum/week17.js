@@ -260,18 +260,22 @@ class Person {
 		this.age = age;
 		this.city = city;
 	}
-	changeCity() {
-		return
+	changeCity(value) {
+		return this.city = value;
 	}
 }
 
 const person1 = new Person('Вика', 35, 'Санкт-Петербург');
 console.log('21', person1);
 
+
 //Задание 22
 //Добавьте в класс Person метод changeCity, который будет изменять значение свойства city на новое значение. Создайте объект person2 на основе класса Person, вызовите метод changeCity с аргументом "New York" и выведите новое значение свойства city в консоль.
 
 const person2 = new Person('Алена', 43, 'Москва');
+console.log(person2);
+console.log(person2.changeCity('Нью-Йорк'));
+console.log(person2);
 
 //Задание 23
 //Создайте класс Employee. Класс должен содержать свойства name, position и salary. Создайте на его основе объект employee и выведите его свойства в консоль.
